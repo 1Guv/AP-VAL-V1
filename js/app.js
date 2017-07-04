@@ -12,11 +12,17 @@ $(document).ready(function(){
   var counter = 0;
   var next = 0;
   var back = 0;
+
   var $q = $('.question');
+  var $qexample = $('.example');
 
   function questionOne() {
     counter = 1;
     $q.html('Q1: Please state the exact number plate with the correct spacing?');
+    $qexample.html('Example of spacing for most plates: [1A], [A1], [1 AB], [AB 1], [1 ABC], [ABC 1], [ABC 123D], [A123 BCD] or [AB51 CDE]');
+    
+    // generate plate for viewing
+
   }
 
   function questionTwo() {
