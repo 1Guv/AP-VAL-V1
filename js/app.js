@@ -10,6 +10,8 @@ $(document).ready(function(){
   var $backButton = $('.back-button');
 
   var counter = 0;
+  var next = 0;
+  var back = 0;
   var $q = $('.question');
 
   function questionOne() {
@@ -24,22 +26,22 @@ $(document).ready(function(){
 
   function questionThree() {
     counter = 3;
-    $q.html('Q3: Please state the plate in ENGLISH or PUNJABI words with spaces?')
+    $q.html('Q3: Does the reg have the EXACT, MORE or LESS characters than the actual word that it represents?')
   }
 
   function questionFour() {
     counter = 4;
-    $q.html('Q4: Does the reg have the EXACT, MORE or LESS characters than the actual word that it represents?')
+    $q.html('Q4: Does the registration have duplicate sequential letters or numbers? (yes or no)?')
   }
 
   function questionFive() {
     counter = 5;
-    $q.html('Q5: Does the registration have duplicate sequential letters or numbers? (yes or no)?')
+    $q.html('Q5: Please state if the plate is a good match to the words above?')
   }
 
   function questionSix() {
     counter = 6;
-    $q.html('Q6: Please state if the plate is a good match to the words above?')
+    $q.html('Q6: What are the total amount of characters in the plate?')
   }
 
   $startButton.click(function() {
@@ -49,37 +51,33 @@ $(document).ready(function(){
     $startButton.click(function() {
       questionOne();
     });
+  });
+
 
   $nextButton.click(function(){
     console.log(counter);
     // questionTwo();
-    counter = counter + 1;
-    switch (counter) {
-      case 1:
-        questionOne();
-        break;
-      case 2:
-        questionTwo();
-        break;
-      case 3:
-        questionThree();
-        break;
-      case 4:
-        questionFour();
-        break;
-      case 5:
-        questionFive();
-        break;
-      case 6:
-        questionSix();
-        break;
-    }
+    next = 1;
+    backOrNext();
   });
 
   $backButton.click(function(){
     console.log(counter);
     // questionOne();
-    counter = counter - 1;
+    back = 1;
+    backOrNext();
+  });
+
+  function backOrNext() {
+
+    if (next == 1) {
+      counter = counter + 1;
+      next = 0;
+    } else if (back == 1) {
+      counter = counter - 1;
+      back = 0;
+    }
+
     switch (counter) {
       case 1:
         questionOne();
@@ -100,11 +98,7 @@ $(document).ready(function(){
         questionSix();
         break;
     }
-  });
-
-});
-
-
+  }
 
 
 });
