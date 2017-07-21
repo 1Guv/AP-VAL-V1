@@ -2,33 +2,81 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>APNAPLATES Valuation Version1</title>
+    <title>Valuation V1</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/app.js" charset="utf-8"></script>
   </head>
   <body>
-    <h1>www.APNAPLATES.com</h1>
-    <h2>Automated Valuations</h2>
-    <section>
-      <div class="question">Question:</div>
-      <div class="example">Example:</div>
-      <div class="options">Options:</div>
-      <div class="answer">Answer!</div>
-      <br>
-      <button type="button" name="button" class="start-button">START</button>
-      <br>
-      <button type="button" name="button" class="next-button">NEXT</button>
-      <br>
-      <button type="button" name="button" class="back-button">BACK</button>
+
+  <div class="container">
+
+    <section class="text-center">
+      <h5>www.APNAPLATES.com</h5>
+      <h3>Automated Valuations</h3>
     </section>
 
+    <div class="row">
+
+      <section class="col-sm-6 txt-center">
+        <h4>VALUATION:</h4>
+        <div class="question">Question:</div>
+        <div class="example">Example:</div>
+        <div class="options">Options:</div>
+        <br>
+
+        <form class="responseForm" onsubmit="return false;">
+          <div class="answer">Response:
+            <input type="text" name="answer" value="" class="UserInput">
+            <button type="submit" name="button" class="submit-button">SUBMIT</button>
+          </div>
+          <br>
+        </form>
+
+        <button type="button" name="button" class="start-button">START</button>
+        <br><br>
+        <button type="button" name="button" class="back-button">BACK</button>
+        <button type="button" name="button" class="next-button">NEXT</button>
+      </section>
+
+      <section class="col-sm-6 txt-center">
+        <h4>RESULTS:</h4>
+        <h5 class="Q1UserPlate"></h5>
+        <h5 class="Q2UserPlateActual"></h5>
+        <h5 class="Q3PlateCharacters"></h5>
+        <h5 class="Q4DuplicateChars"></h5>
+        <h5 class="Q5GoodMatch"></h5>
+        <h5 class="Q6TotChars"></h5>
+        <h5 class="Q7Digits"></h5>
+        <h5 class="Q8Letters"></h5>
+        <h5 class="Q9Type"></h5>
+        <h5 class="Q10Age"></h5>
+        <h5 class="Q11Spaces"></h5>
+        <h5 class="Q12LetterModify"></h5>
+        <h5 class="Q13DigitModify"></h5>
+      </section>
+
+    </div>
+
     <section>
+
+    </section>
+
+    <section class="text-center">
+      <br><br>
       <h4>COMPLETION BAR</h4>
     </section>
 
-    <section>
-      <h4>Q1 : Q2 : Q3 : Q4 : Q5 : Q6 : Q7 : Q8 : Q9 : Q10 : Q11 : Q12 : Q13 : Q14 : Q15</h4>
+    <section class="text-center">
+      <br>
+      <h4>Q1 : Q2 : Q3 : Q4 : Q5 : Q6 : Q7 : Q8 : Q9 : Q10 : Q11 : Q12 : Q13</h4>
     </section>
+
+    <section>
+    </section>
+
+  </div>
   </body>
 </html>
