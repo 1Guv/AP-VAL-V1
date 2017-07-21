@@ -14,32 +14,35 @@ $(document).ready(function(){
 
   var $q = $('.question');
   var $qexample = $('.example');
-  var q1Input;
-  var q2Input;
-  var q3Input;
-  var q4Input;
+
+  var q1Value = 0;
+  var valuationResult = 0;
 
   // for each question the submit button is clicked
   $submitButton.click(function() {
 
     switch (counter) {
       case 1:
+        q1Value = 2000;
         q1Input = $('.UserInput').val();
         q1Input = q1Input.toUpperCase();
         console.log(q1Input);
-        $('.Q1UserPlate').html("Q1 - Plate: " + q1Input);
+        $('.Q1UserPlate').html("Q1 - Plate: " + q1Input + " >> £" + q1Value);
+        valuationResult += q1Value;
+        $('.ValuationResult').html("Current Valuation is: £" + valuationResult);
         $('.UserInput').val('');
         console.log(counter);
         counter = counter + 1;
         backOrNext();
         break;
       case 2:
+        q2Value = 1000;
         q2Input = $('.UserInput').val();
         q2Input = q2Input.toUpperCase();
         console.log(q2Input);
-        // remove the text
-
-        $('.Q2UserPlateActual').html("Q2 - Actual Plate: " + q2Input);
+        $('.Q2UserPlateActual').html("Q2 - Meaning: " + q2Input + " >> £" + q2Value);
+        valuationResult += q2Value;
+        $('.ValuationResult').html("Current Valuation is: £" + valuationResult);
         $('.UserInput').val('');
         console.log(counter);
         counter = counter + 1;
