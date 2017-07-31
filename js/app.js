@@ -49,20 +49,44 @@ $(document).ready(function(){
         backOrNext();
         break;
       case 3:
+        q3Value = 0;
         q3Input = $('.UserInput').val();
         q3Input = q3Input.toUpperCase();
         console.log(q3Input);
-        $('.Q3PlateCharacters').html("Q3 - Characters: " + q3Input);
+
+        if (q3Input === "MORE" || q3Input === "LESS") {
+          q3Value += -1000;
+        } else if (q3Input === "EXACT") {
+          q3Value += 5000;
+        };
+
+        $('.Q3PlateCharacters').html("Q3 - Characters: " + q3Input + " >> £" + q3Value);
+
+        valuationResult += q3Value;
+        $('.ValuationResult').html("Current Valuation is: £" + valuationResult);
+
         $('.UserInput').val('');
         console.log(counter);
         counter = counter + 1;
         backOrNext();
         break;
       case 4:
+        q4Value = 0;
         q4Input = $('.UserInput').val();
         q4Input = q4Input.toUpperCase();
         console.log(q4Input);
-        $('.Q4DuplicateChars').html("Q4 - Duplicate characters: " + q4Input);
+
+        if (q4Input === "Y" || q4Input === "YES") {
+          q4Value += -1000;
+        } else if (q4Input === "N" || q4Input == "NO") {
+          q4Value += 3000;
+        }
+
+        $('.Q4DuplicateChars').html("Q4 - Duplicate characters: " + q4Input + " >> £" + q4Value);
+
+        valuationResult += q4Value;
+        $('.ValuationResult').html("Current Valuation is: £" + valuationResult);
+
         $('.UserInput').val('');
         console.log(counter);
         counter = counter + 1;
